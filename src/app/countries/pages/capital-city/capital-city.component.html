@@ -1,0 +1,23 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>Por capital</h2>
+
+  <hr>
+
+  <div class="row">
+    <div class="col">
+      <app-country-form (onEnter)="search($event)" placeholder="Buscar país por capital..."></app-country-form>
+    </div>
+  </div>
+
+  <hr>
+</div>
+
+<div *ngIf="error" class="alert alert-danger">
+  No se encontró nada con el término {{ term }}
+</div>
+
+<div *ngIf="!error && countries.length" class="row">
+  <div class="col">
+    <app-countries-table [countries]="countries"></app-countries-table>
+  </div>
+</div>
